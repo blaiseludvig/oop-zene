@@ -4,8 +4,8 @@ const btn_add = document.querySelector("#add");
 const output = document.querySelector("#out");
 
 class Track {
-  title = "";
-  length = 0;
+  #title = "";
+  #length = 0;
 
   static playlist = [];
 
@@ -37,9 +37,9 @@ function init() {
     title.value = "";
     length.value = "";
 
-    output.textContent = `${Track.total_length()} perc`;
+    output.textContent = `${Math.floor(Track.total_length() / 60)} óra ${Track.total_length() % 60} perc`;
   });
-  
+
 }
 
 init();
